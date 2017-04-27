@@ -28,6 +28,6 @@ public class Rule36 extends Rule {
     @Override
     public String showError() {
 
-        return ("Các nguyên âm được phép sau \"ê\", \"ế\", \"ề\", \"ệ\",  thì chỉ có: \"u\"");
+        return ("Rule36:\tCác nguyên âm được phép sau \"ê\", \"ế\", \"ề\", \"ệ\",  thì chỉ có: \"u\"");
     }
 }

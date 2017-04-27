@@ -19,6 +19,6 @@ public class Rule39 extends Rule {
     @Override
     public String showError() {
 
-        return ("Nguyên âm sau \"o\" để tạo thành cặp nguyên âm: \"oa\", \"oi\", \"oe\",");
+        return ("Rule39:\tNguyên âm sau \"o\" để tạo thành cặp nguyên âm: \"oa\", \"oi\", \"oe\",");
     }
 }

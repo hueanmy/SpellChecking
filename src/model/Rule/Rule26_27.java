@@ -28,6 +28,6 @@ public class Rule26_27 extends Rule {
     @Override
     public String showError() {
 
-        return ("Cũng tương tự như thế, không có nguyên âm nào đằng sau \"ằ\", \"ắ\", \"ẵ\", \"ẳ\", \"ặ\"");
+        return ("Rule26_27:\tCũng tương tự như thế, không có nguyên âm nào đằng sau \"ằ\", \"ắ\", \"ẵ\", \"ẳ\", \"ặ\"");
     }
 }

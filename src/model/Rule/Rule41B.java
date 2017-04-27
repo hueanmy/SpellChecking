@@ -25,6 +25,6 @@ public class Rule41B extends Rule{
     @Override
     public String showError() {
 
-        return ("Nguyên âm \"ỡ\" nếu đi sau nó là \"i\" thì từ đó phải là \"hỡi\"");
+        return ("Rule41B:\tNguyên âm \"ỡ\" nếu đi sau nó là \"i\" thì từ đó phải là \"hỡi\"");
     }
 }

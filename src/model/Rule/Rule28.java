@@ -31,6 +31,6 @@ public class Rule28 extends Rule {
     @Override
     public String showError() {
 
-        return ("Các nguyên âm được phép sau nguyên âm \"i\": ia, iu, iê, iế, iệ, iể, iễ, iề,");
+        return ("Rule28:\tCác nguyên âm được phép sau nguyên âm \"i\": ia, iu, iê, iế, iệ, iể, iễ, iề,");
     }
 }

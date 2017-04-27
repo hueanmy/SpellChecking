@@ -39,6 +39,7 @@ public class MainView extends javax.swing.JFrame {
 	String contentError = "";
 	private Kmp kMPAlgorithm;
 	public ArrayList<Rule> listRules;
+	String found = "";
 
 	public MainView() {
 		initComponents();
@@ -99,46 +100,47 @@ public class MainView extends javax.swing.JFrame {
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(readFileBtn)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(btnCheck)
-                                                .addGap(28, 28, 28))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGap(36, 36, 36)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                        .addComponent(btnSearch)
-                                                        .addGap(26, 26, 26)))
-                                        .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(24, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(813, 813, 813)
+                                                .addComponent(readFileBtn)
+                                                .addGap(30, 30, 30)
+                                                .addComponent(btnCheck))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(36, 36, 36)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
+                                                        .addComponent(jScrollPane1))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(73, 73, 73)
+                                                                .addComponent(btnSearch))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(34, 34, 34)
+                                                                .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addContainerGap(49, Short.MAX_VALUE))
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
+                                .addGap(71, 71, 71)
                                 .addComponent(btnSearch)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(33, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(27, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(readFileBtn)
-                                        .addComponent(btnCheck))
-                                .addGap(9, 9, 9)
+                                        .addComponent(btnCheck)
+                                        .addComponent(readFileBtn))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(31, 31, 31))
                 );
@@ -168,7 +170,7 @@ public class MainView extends javax.swing.JFrame {
 		String[] arr = input.split("[^\\p{IsAlphabetic}']+");
 
 		MainView check = new MainView();
-		
+
 		textError.setText("");
 
 		check.listRules = new ArrayList<>();
@@ -228,9 +230,9 @@ public class MainView extends javax.swing.JFrame {
 		for (String word : arr) {
 			for (Rule rule : check.listRules) {
 				if (!rule.isValid(word)) {
-					contentError += word + ": " + "Sai luat: \t" + rule.showError() + "\n"; 
+					contentError += word + ":    " + "Sai luat: \t" + rule.showError() + "\n";
 //					System.out.println(contentError);
-					textError.setText(contentError );
+					textError.setText(contentError);
 				}
 			}
 
@@ -259,9 +261,12 @@ public class MainView extends javax.swing.JFrame {
 			txtResult.setText("No match found");
 		} else {
 			txtResult.setText(kMPAlgorithm.getNumberOfMatchesFound() + " matches found");
+			
 		}
+		
 
 		setResultHighlight(kMPAlgorithm.getResultPositions());
+		
 
         }//GEN-LAST:event_btnSearchActionPerformed
 

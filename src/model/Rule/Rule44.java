@@ -23,6 +23,6 @@ public class Rule44 extends Rule {
 
     @Override
     public String showError() {
-        return (" Nguyên âm \"ú\", \"ù\", \"ủ\", \"ụ\" đi đằng sau sẽ là các nguyên âm \"i\", \"a\", \"y\",");
+        return ("Rule44:\tNguyên âm \"ú\", \"ù\", \"ủ\", \"ụ\" đi đằng sau sẽ là các nguyên âm \"i\", \"a\", \"y\",");
     }
 }

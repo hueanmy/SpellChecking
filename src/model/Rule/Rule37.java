@@ -33,6 +33,6 @@ public class Rule37 extends Rule {
     @Override
     public String showError () {
 
-        return ("Nguyên âm \"ễu\" chỉ được phép đi trong từ \"Tễu\" và \"phễu\"");
+        return ("Rule37:\tNguyên âm \"ễu\" chỉ được phép đi trong từ \"Tễu\" và \"phễu\"");
     }
 }

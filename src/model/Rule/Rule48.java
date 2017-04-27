@@ -29,7 +29,7 @@ public class Rule48 extends Rule {
 	@Override
 	public String showError() {
 
-        return ("Các nguyên âm ba có thể xuất hiện được trong tiếng Việt mà nguyên âm đầu tiên là \"ư\" gồm: " +
+        return ("Rule48:\tCác nguyên âm ba có thể xuất hiện được trong tiếng Việt mà nguyên âm đầu tiên là \"ư\" gồm: " +
                 "ươi, ười, ưới, ưỡi, ưởi, ượi, ượu, ườu, ươu, ướu,");
 	}
 

@@ -33,6 +33,6 @@ public class Rule25 extends Rule {
     @Override
     public String showError() {
 
-        return ("Chỉ có một số nguyên âm được phép đứng đằng sau \"ầ\" để tạo thành cặp nguyên âm: ầu, ầy");
+        return ("Rule25:\tChỉ có một số nguyên âm được phép đứng đằng sau \"ầ\" để tạo thành cặp nguyên âm: ầu, ầy");
     }
 }

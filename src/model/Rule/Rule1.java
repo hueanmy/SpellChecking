@@ -18,6 +18,6 @@ public class Rule1 extends Rule {
 
     @Override
     public String showError() {
-        return ("Rule1:Có một số phụ âm chỉ được phép đứng đầu từ: q, s, d, đ, k, l, x, v, b");
+        return ("Rule1:\tCó một số phụ âm chỉ được phép đứng đầu từ: q, s, d, đ, k, l, x, v, b");
     }
 }

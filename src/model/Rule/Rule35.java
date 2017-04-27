@@ -27,6 +27,6 @@ public class Rule35 extends Rule {
     @Override
     public String showError() {
 
-        return ("Các nguyên âm được phép sau \"e\", \"é\", \"è\", \"ẻ\", \"ẹ\", \"ẽ\" thì chỉ có: \"o\"");
+        return ("Rule35:\tCác nguyên âm được phép sau \"e\", \"é\", \"è\", \"ẻ\", \"ẹ\", \"ẽ\" thì chỉ có: \"o\"");
     }
 }

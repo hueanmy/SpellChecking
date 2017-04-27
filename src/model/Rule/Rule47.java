@@ -28,10 +28,7 @@ public class Rule47 extends Rule {
 
 	@Override
 	public String showError() {
-		return ("Các nguyên âm ba có thể xuất hiện được trong tiếng Việt mà " +
-                "nguyên âm đầu tiên là \"u\" gồm: uôi, uối, uồi, uỗi, uội, uổi, uai " +
-                "(phải đi với q), quái, quại, quay, quẩy, quậy, quầy, " +
-                "uây (đi được với q và kh), uấy (đi kèm với q và kh), quẫy, uya, uỷu (đi với kh)");
+		return ("Rule47:\tCác nguyên âm ba có thể xuất hiện được trong tiếng Việt mà nguyên âm đầu tiên là \"u\" gồm: u                         ôi, uối, uồi, uỗi, uội, uổi, uai (phải đi với q), quái, quại, quay, quẩy, quậy, quầy,  uây (đi được vớ                         i q và kh), uấy (đi kèm với q và kh), quẫy, uya, uỷu (đi với kh)");
 	}
 
 }

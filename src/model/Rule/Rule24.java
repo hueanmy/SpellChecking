@@ -34,6 +34,6 @@ public class Rule24 extends Rule {
     @Override
     public String showError() {
 
-        return ("Chỉ có một số nguyên âm được phép đứng đằng sau \"ậ\" để tạo thành cặp nguyên âm: ậu, ậy");
+        return ("Rule24:\tChỉ có một số nguyên âm được phép đứng đằng sau \"ậ\" để tạo thành cặp nguyên âm: ậu, ậy");
     }
 }

@@ -29,7 +29,7 @@ public class Rule32_34 extends Rule{
 
     @Override
     public String showError() {
-        return ("Các nguyên âm được phép sau nguyên âm \"ị\": ịu, ịa," +
+        return ("Rule32-34:\tCác nguyên âm được phép sau nguyên âm \"ị\": ịu, ịa," +
                 "Các nguyên âm được phép sau nguyên âm \"í\": íu, ía, ");
     }
 }

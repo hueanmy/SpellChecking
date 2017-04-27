@@ -23,7 +23,7 @@ public class Rule40 extends Rule {
 
         @Override
         public String showError () {
-            return ("Ta có thể tổng quát hóa lên rằng các từ \"ó\", \"ò\", \"ỏ\", \"ọ\" " +
+            return ("Rule40:\tTa có thể tổng quát hóa lên rằng các từ \"ó\", \"ò\", \"ỏ\", \"ọ\" " +
                     "có các nguyên âm \"e\", \"i\", \"a\" đằng sau được");
         }
     }

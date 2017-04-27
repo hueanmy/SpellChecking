@@ -1,12 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package model.Rule;
 
 /**
- * Created by katie on 11/03/2017.
+ *
+ * @author katie
  */
-public class Rule5 extends Rule{
+public class Rule5 extends Rule {
+
+    @Override
     public boolean isValid(String x) {
-        String VowelCharacters = "eyuioa"
-                + "èéẹẻẽ" + "ê" + "ềếệểễ"
+        String VietnameseVowels = "èéẹẻẽ" + "ê" + "ềếệểễ"
                 + "ùúụủũ" + "ư" + "ừứựửữ"
                 + "ìíịỉĩ"
                 + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
@@ -14,19 +21,21 @@ public class Rule5 extends Rule{
                 + "ỳýỵỷỹ"
                 ;
         int count = 0;
-        for(int i = 0; i<x.length();i++){
-            if(VowelCharacters.contains(x.charAt(i) +"")){
-               count++;
+        for (int i = 0; i < x.length(); i++) {
+            if (VietnameseVowels.contains(x.charAt(i) + "")) {
+                count ++;
             }
         }
-        if(count>=1&&count<=3){
+        if (count >= 1 && count <= 3){
             return true;
-        }
-        else
+        } else {
             return false;
+        }
     }
 
+    @Override
     public String showError() {
-        return ("Một từ tiếng Việt tối đa là 3 nguyên âm");
+        return("1 từ chỉ có tối đa 3 nguyên âm!");
     }
+    
 }

@@ -31,6 +31,6 @@ public class Rule10 extends Rule {
     }
 
     public String showError() {
-        return ("Rule10:Nếu một từ có 3 phụ âm cạnh nhau => đó phải là ngh");
+        return ("Rule10:\tNếu một từ có 3 phụ âm cạnh nhau => đó phải là ngh");
     }
 }

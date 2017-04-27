@@ -53,6 +53,6 @@ public class Rule9 extends Rule {
     }
 
     public String showError() {
-        return ("Nếu một từ có 2 phụ âm cạnh nhau thì các phụ âm đó phải là: tr, th, ph, gh, kh, ch, nh, ng,");
+        return ("Rule9:\tNếu một từ có 2 phụ âm cạnh nhau thì các phụ âm đó phải là: tr, th, ph, gh, kh, ch, nh, ng,");
     }
 }

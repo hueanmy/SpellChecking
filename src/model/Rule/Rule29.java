@@ -25,6 +25,6 @@ public class Rule29 extends Rule{
     @Override
     public String showError() {
 
-        return ("Nguyên âm i được phép đi cùng \"ữ\", nhưng đó phải là từ \"giữ\" ");
+        return ("Rule29:\tNguyên âm i được phép đi cùng \"ữ\", nhưng đó phải là từ \"giữ\" ");
     }
 }

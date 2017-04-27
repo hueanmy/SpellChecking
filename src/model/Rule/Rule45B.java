@@ -18,6 +18,6 @@ public class Rule45B extends Rule{
 
     @Override
     public String showError() {
-        return ("Nguyên âm \"ư\" đứng đầu và nguyên âm khác đi sau là : a , ơ , ở , ợ , ờ , ớ , n");
+        return ("Rule45B:\tNguyên âm \"ư\" đứng đầu và nguyên âm khác đi sau là : a , ơ , ở , ợ , ờ , ớ , n");
     }
 }

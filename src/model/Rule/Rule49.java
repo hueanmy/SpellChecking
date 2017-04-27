@@ -26,8 +26,6 @@ public class Rule49 extends Rule {
 	@Override
 	public String showError() {
 
-        return ("Các nguyên âm ba có thể xuất hiện được trong tiếng Việt mà " +
-                "nguyên âm đầu tiên là \"o\" gồm: oai, oài, oái, oải, oại  " +
-                "(oãi thì gần như không thấy), oay (chỉ đi với x), oáy (đi với x và ng), oẹo (đi với ng), ");
+        return ("Rule49:\tCác nguyên âm ba có thể xuất hiện được trong tiếng Việt mà nguyên âm đầu tiên là \"o\" gồm: oai, oài,			oái, oải, oại oãi thì gần như không thấy), oay (chỉ đi với x), oáy (đi với x và ng), oẹo (đi với ng), ");
 	}
 }

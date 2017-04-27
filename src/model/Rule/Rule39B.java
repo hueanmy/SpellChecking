@@ -29,6 +29,6 @@ public class Rule39B extends Rule {
     @Override
     public String showError() {
 
-        return ("Cặp nguyên âm \"oo\" chỉ có thể thuộc về xoong, boong,");
+        return ("Rule39B:\tCặp nguyên âm \"oo\" chỉ có thể thuộc về xoong, boong,");
     }
 }

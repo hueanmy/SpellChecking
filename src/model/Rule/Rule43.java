@@ -19,6 +19,6 @@ public class Rule43 extends Rule {
     @Override
     public String showError() {
 
-        return ("Nguyên âm \"u\" đi đằng sau sẽ là các nguyên âm \"i\", \"a\", \"y\", \"ê\", \"ở\",  \"ế\"");
+        return ("Rule43:\tNguyên âm \"u\" đi đằng sau sẽ là các nguyên âm \"i\", \"a\", \"y\", \"ê\", \"ở\",  \"ế\"");
     }
 }

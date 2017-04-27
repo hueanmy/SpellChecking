@@ -17,6 +17,6 @@ public class Rule45 extends Rule {
 
     @Override
     public String showError() {
-        return ("sau ũ có chỉ có các ký tự: y,i,m,n");
+        return ("Rule45:\tsau ũ có chỉ có các ký tự: y,i,m,n");
     }
 }

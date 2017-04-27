@@ -23,6 +23,6 @@ public class Rule41 extends Rule {
     @Override
     public String showError() {
 
-        return ("Nguyên âm \"ơ\", \"ớ\", \"ờ\", \"ở\", \"ợ\" thì chỉ có đằng sau là nguyên âm \"i\"");
+        return ("Rule41:\tNguyên âm \"ơ\", \"ớ\", \"ờ\", \"ở\", \"ợ\" thì chỉ có đằng sau là nguyên âm \"i\"");
     }
 }

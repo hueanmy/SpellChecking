@@ -1,9 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package model.Rule;
 
 /**
- * Created by katie on 11/03/2017.
+ *
+ * @author katie
  */
-public class Rule3 extends Rule{
+public class Rule3 extends Rule {
+
     @Override
     public boolean isValid(String x) {
         String VietnameseCharacters = "qertyuiopasdghklxcvbnm"
@@ -13,17 +20,19 @@ public class Rule3 extends Rule{
                 + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
                 + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
                 + "đ"
-                + "ỳýỵỷỹ" ;
-        for(int i = 0; i<x.length(); i++){
-            if(!VietnameseCharacters.contains(x.charAt(i)+ "")){
+                + "ỳýỵỷỹ"
+                ;
+
+        for (int i = 0; i < x.length(); i++) {
+            if (!VietnameseCharacters.contains(x.charAt(i) + "")) {
                 return false;
             }
         }
         return true;
     }
 
-    @Override
     public String showError() {
-        return ("Rule3:\tTrong tiếng Việt chỉ có các chữ cái viết thường sau: qrtpsd đ g h k l x c v b n m, aeiuoy, â ấ ă ắ ơ ư ...");
+        return("chữ cái này không tồn tại trong bảng chữ cái tiếng Việt");
     }
+    
 }
