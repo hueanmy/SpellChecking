@@ -6,22 +6,33 @@ package model.Rule;
 public class Rule13 extends Rule {
     @Override
     public boolean isValid(String x) {
-        boolean check = false;
-        String consonants = "h g";
-        if(x.endsWith(consonants)) {
-            check = true;
+	String lastC = x.length()>1?x.charAt(x.length()-1)+"":"";
+        String nearLastC = x.length()>1?x.charAt(x.length()-2)+"":"";
+        if(lastC.equalsIgnoreCase("h")){
+            if(nearLastC.equalsIgnoreCase("n")||nearLastC.equalsIgnoreCase("c")){
+                return true;
+            } return false;
+        } else if(lastC.equalsIgnoreCase("g")){
+            if(nearLastC.equalsIgnoreCase("n")){
+                return true;
+            } else return false;
         }
-        if(check=true){
-            if(!"n c".contains(x.charAt(x.length()-2)+"")){
-                if("h".contains(x.charAt(x.length()-1)+""))
-                    check = false;
-            }
-            if(!"n".contains(x.charAt(x.length()-2)+"")){
-                if("g".contains(x.charAt(x.length()-1)+""))
-                    check = false;
-            }
-        }
-        return check;
+//        boolean check = false;
+//        String consonants = "h g";
+//        if(x.endsWith(consonants)) {
+//            check = true;
+//        }
+//        if(check=true){
+//            if(!"n c".contains(x.charAt(x.length()-2)+"")){
+//                if("h".contains(x.charAt(x.length()-1)+""))
+//                    check = false;
+//            }
+//            if(!"n".contains(x.charAt(x.length()-2)+"")){
+//                if("g".contains(x.charAt(x.length()-1)+""))
+//                    check = false;
+//            }
+//        }
+        return true;
     }
 
     @Override

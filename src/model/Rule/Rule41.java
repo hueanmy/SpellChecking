@@ -1,20 +1,27 @@
 package model.Rule;
 
+import static model.Rule.Define_Character.nguyenam;
+import static model.Rule.Define_Character.vowelsCount;
+
 /**
  * Created by katie on 16/03/2017.
  */
 public class Rule41 extends Rule {
     @Override
     public boolean isValid(String x) {
-        String vowel41 = "ơ ờ ở ";
-        for(int i =0;i<x.length()-1;i++){
-            if(vowel41.contains(x.charAt(i)+"")){
-                if(!"i n m".contains(x.charAt(i+1)+""))
-                    return false;
-            }
-            if("ớ ợ".contains(x.charAt(i)+"")){
-                if(!"i n m t p".contains(x.charAt(i+1)+""))
-                    return false;
+        if(vowelsCount(x)==2){
+            for(int i=0; i<x.length()-1; i++){
+                if(((x.charAt(i)+"").contains("ơ") 
+                        || (x.charAt(i)+"").contains("ớ") 
+                        || (x.charAt(i)+"").contains("ờ") 
+                        || (x.charAt(i)+"").contains("ở") 
+                        || (x.charAt(i)+"").contains("ợ"))
+                        && nguyenam.contains(x.charAt(i+1)+"")){
+                    if((x.charAt(i+1)+"").contains("i")){
+                        return true;
+                    }
+                    else return false;
+                }
             }
         }
         return true;

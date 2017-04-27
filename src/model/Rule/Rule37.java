@@ -1,34 +1,29 @@
 package model.Rule;
 
+import static model.Rule.Define_Character.vowelsCount;
+
 /**
  * Created by katie on 16/03/2017.
  */
 public class Rule37 extends Rule {
     @Override
     public boolean isValid(String x) {
-        boolean check = false;
-        String[] words = {"tễu", "phễu", "nghễu", "ễu"};
-        for (int i = 0; i < x.length() - 1; i++) {
-            if ("ễ".contains(x.charAt(i) + "")) {
-                if ("u".contains(x.charAt(i + 1) + ""))
-                    check = true;
-                break;
-            }
-        }
-        if (check == true) {
-            for (String c : words) {
-                if (x.equals(c)){
-                    check = true;
-                    break;
+        if(vowelsCount(x)==2){
+            for(int i=0; i<x.length()-1; i++){
+                if((x.charAt(i)+"").equalsIgnoreCase("ễ")){
+                    if((x.charAt(i+1)+"").equalsIgnoreCase("u")){
+                        if(x.equalsIgnoreCase("tễu") || x.equalsIgnoreCase("phễu")) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
                 }
-                else {check = false;}
             }
         }
-        return check;
+        return true;
     }
-
-
-
 
     @Override
     public String showError () {

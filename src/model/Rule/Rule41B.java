@@ -1,25 +1,28 @@
 package model.Rule;
 
+import static model.Rule.Define_Character.vowelsCount;
+
 /**
  * Created by katie on 16/03/2017.
  */
 public class Rule41B extends Rule{
     @Override
     public boolean isValid(String x) {
-        boolean check = false;
-        for(int i=0;i<x.length()-1;i++){
-            if("ỡ".contains(x.charAt(i)+"")){
-                if("i".contains(x.charAt(i+1)+""))
-                    check=true;
+        if(vowelsCount(x)==2){
+            for(int i=0; i<x.length()-1; i++){
+                if((x.charAt(i)+"").equalsIgnoreCase("ỡ")){
+                    if((x.charAt(i+1)+"").equalsIgnoreCase("i")){
+                        if(x.equalsIgnoreCase("hỡi")) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                }
             }
         }
-        if(check==true){
-            if(x.equals("hỡi"))
-                return true;
-            else
-                return false;
-        }
-        return false;
+        return true;
     }
 
     @Override

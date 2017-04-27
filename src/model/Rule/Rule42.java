@@ -17,7 +17,7 @@ public class Rule42 extends Rule {
                     return false;
             }
             else if("ỗ".contains(x.charAt(i)+"")){
-                if(!"i".contains(x.charAt(i+1)+""))
+                if(!"i n".contains(x.charAt(i+1)+""))
                     return false;
             }
         }

@@ -5,6 +5,8 @@
  */
 package model.Rule;
 
+import static model.Rule.Define_Character.VietnameseVowels;
+
 /**
  *
  * @author dinhq
@@ -13,20 +15,12 @@ public class Rule4 extends Rule {
 
     @Override
     public boolean isValid(String x) {
-        String VietnameseVowels = "èéẹẻẽ" + "ê" + "ềếệểễ"
-                + "ùúụủũ" + "ư" + "ừứựửữ"
-                + "ìíịỉĩ"
-                + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
-                + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
-                + "ỳýỵỷỹ"
-                ;
-        boolean check = false;
         for (int i = 0; i < x.length(); i++) {
             if (VietnameseVowels.contains(x.charAt(i) + "")) {
                 return true;
             }
         }
-        return check;
+        return true;
     }
 
     @Override

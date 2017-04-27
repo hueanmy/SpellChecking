@@ -5,6 +5,8 @@
  */
 package model.Rule;
 
+import static model.Rule.Define_Character.VietnameseCharacters;
+
 /**
  *
  * @author katie
@@ -13,26 +15,16 @@ public class Rule3 extends Rule {
 
     @Override
     public boolean isValid(String x) {
-        String VietnameseCharacters = "qertyuiopasdghklxcvbnm"
-                + "èéẹẻẽ" + "ê" + "ềếệểễ"
-                + "ùúụủũ" + "ư" + "ừứựửữ"
-                + "ìíịỉĩ"
-                + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
-                + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
-                + "đ"
-                + "ỳýỵỷỹ"
-                ;
-
         for (int i = 0; i < x.length(); i++) {
-            if (!VietnameseCharacters.contains(x.charAt(i) + "")) {
-                return false;
+            if (VietnameseCharacters.contains(x.charAt(i) + "")) {
+                return true;
             }
         }
         return true;
     }
 
     public String showError() {
-        return("chữ cái này không tồn tại trong bảng chữ cái tiếng Việt");
+        return("Rule3:\tchữ cái này không tồn tại trong bảng chữ cái tiếng Việt");
     }
     
 }

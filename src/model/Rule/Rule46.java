@@ -1,4 +1,8 @@
 package model.Rule;
+
+import static model.Rule.Define_Character.nguyenam;
+import static model.Rule.Define_Character.vowelsCount;
+
 /* con error*/
 /**
  * Created by katie on 16/03/2017.
@@ -6,46 +10,38 @@ package model.Rule;
 public class Rule46 extends Rule{
     @Override
     public boolean isValid(String x) {
-        String[] words = {"iữa", "iễu", "iếu", "iều", "iểu", "iêu", "iệu",
-                          "iai", "iải", "iới", "iỏi", "iươ", "iườ", "iòi"};
-        String word2 = "ữ ễ ế ề ể ê ệ a ả ớ ỏ ư ò";
-        String word3 = "a u i ơ ờ ";
-        boolean check = false;
-        int count = 0;
-        String VowelCharacters = "eyuioa"
-            + "èéẹẻẽ" + "ê" + "ềếệểễ"
-            + "ùúụủũ" + "ư" + "ừứựửữ"
-            + "ìíịỉĩ"
-            + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
-            + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
-            + "ỳýỵỷỹ"
-            ;
-        for(int i=0;i<x.length();i++){
-            if(VowelCharacters.contains(x.charAt(i)+"")){
-                count++;
-            }
-        }
-        System.out.println("count" + count);
-        if(count==3){
-            for(int i=0;i<x.length()-1;i++){
-                if("i".contains(x.charAt(i)+"")){
-                            check = true;
-                            break;
+      if (vowelsCount(x) == 3) {
+            for (int i = 0; i < x.length() - 2; i++) {
+                if ((x.charAt(i) + "").equalsIgnoreCase("i") && nguyenam.contains(x.charAt(i + 1) + "") && nguyenam.contains(x.charAt(i + 2) + "")) {
+                    if (((x.charAt(i + 1) + "").equalsIgnoreCase("ữ") && (x.charAt(i + 2) + "").equalsIgnoreCase("a"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("â") && (x.charAt(i + 2) + "").equalsIgnoreCase("y"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ấ") && (x.charAt(i + 2) + "").equalsIgnoreCase("y"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("à") && (x.charAt(i + 2) + "").equalsIgnoreCase("y"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ấ") && (x.charAt(i + 2) + "").equalsIgnoreCase("u"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ễ") && (x.charAt(i + 2) + "").equalsIgnoreCase("u"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ế") && (x.charAt(i + 2) + "").equalsIgnoreCase("u"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ề") && (x.charAt(i + 2) + "").equalsIgnoreCase("u"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ể") && (x.charAt(i + 2) + "").equalsIgnoreCase("u"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ê") && (x.charAt(i + 2) + "").equalsIgnoreCase("u"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ệ") && (x.charAt(i + 2) + "").equalsIgnoreCase("u"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("a") && (x.charAt(i + 2) + "").equalsIgnoreCase("i"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ả") && (x.charAt(i + 2) + "").equalsIgnoreCase("i"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("á") && (x.charAt(i + 2) + "").equalsIgnoreCase("o"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ả") && (x.charAt(i + 2) + "").equalsIgnoreCase(""))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("a") && (x.charAt(i + 2) + "").equalsIgnoreCase("o"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ớ") && (x.charAt(i + 2) + "").equalsIgnoreCase("i"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ỏ") && (x.charAt(i + 2) + "").equalsIgnoreCase("i"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ư") && (x.charAt(i + 2) + "").equalsIgnoreCase("ơ"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ư") && (x.charAt(i + 2) + "").equalsIgnoreCase("ờ"))
+                            || ((x.charAt(i + 1) + "").equalsIgnoreCase("ò") && (x.charAt(i + 2) + "").equalsIgnoreCase("i"))) {
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
             }
         }
-        if(check==true){
-            for(String c : words){
-               if(x.contains(c)){
-                    check = true;
-                    break;
-                }
-                else
-                    check = false;
-            }
-        }
-
-        return check;
+        return true;
     }
 
     @Override

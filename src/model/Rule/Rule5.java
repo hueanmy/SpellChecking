@@ -5,6 +5,8 @@
  */
 package model.Rule;
 
+import static model.Rule.Define_Character.VietnameseVowels;
+
 /**
  *
  * @author katie
@@ -13,13 +15,6 @@ public class Rule5 extends Rule {
 
     @Override
     public boolean isValid(String x) {
-        String VietnameseVowels = "èéẹẻẽ" + "ê" + "ềếệểễ"
-                + "ùúụủũ" + "ư" + "ừứựửữ"
-                + "ìíịỉĩ"
-                + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
-                + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
-                + "ỳýỵỷỹ"
-                ;
         int count = 0;
         for (int i = 0; i < x.length(); i++) {
             if (VietnameseVowels.contains(x.charAt(i) + "")) {
@@ -28,14 +23,15 @@ public class Rule5 extends Rule {
         }
         if (count >= 1 && count <= 3){
             return true;
-        } else {
-            return false;
-        }
+	}
+	
+	return true;
+    
     }
 
     @Override
     public String showError() {
-        return("1 từ chỉ có tối đa 3 nguyên âm!");
+        return("Rule5:\t1 từ chỉ có tối đa 3 nguyên âm!");
     }
     
 }

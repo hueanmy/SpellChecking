@@ -5,6 +5,10 @@
  */
 package model.Rule;
 
+import static model.Rule.Define_Character.VietnameseVowels;
+import static model.Rule.Define_Character.nguyenam;
+import static model.Rule.Define_Character.vowelsCount;
+
 /**
  *
  * @author katie
@@ -13,37 +17,24 @@ public class Rule6 extends Rule {
 
     @Override
     public boolean isValid(String x) {
-        String VietnameseVowels = "aoie"
-                + "èéẹẻẽ" + "ê" + "ềếệểễ"
-                + "ùúụủũ" + "ư" + "ừứựửữ"
-                + "ìíịỉĩ"
-                + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
-                + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
-                + "ỳýỵỷỹ"
-                ;
-        int count = 0;
-        for (int i = 0; i < x.length(); i++) {
-            if (VietnameseVowels.contains(x.charAt(i) + "")) {
-                count ++;
-            }
-            
-        }
-        if (count == 2){
-            for (int i = 0; i < x.length(); i++) {
-                if (VietnameseVowels.contains(x.charAt(i) + "")) {
-                    if(VietnameseVowels.contains(x.charAt(i+1)+"")){
+       if(vowelsCount(x)>1){
+            for(int i=0; i<x.length();i++){
+                if(nguyenam.contains(x.charAt(i)+"")){
+                    for(int j=i+1; j<x.length(); j++){
+                        if(!nguyenam.contains(x.charAt(j)+"")){
+                            return false;
+                        }
                         return true;
                     }
                 }
-            
             }
         }
-        return false;
+        return true;
     }
 
     @Override
     public String showError() {
-       return("Từ nếu có 2 nguyên âm phải đứng cạnh nhau!");
+       return("Rule6:\tTừ nếu có 2 nguyên âm phải đứng cạnh nhau!");
     }
     
 }
