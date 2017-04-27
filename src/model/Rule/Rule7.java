@@ -22,6 +22,6 @@ public class Rule7 extends Rule {
     @Override
 
     public String showError() {
-        return ("Một từ tiếng Việt có tối đa 5 phụ âm: nghiêng");
+        return ("Rule7:\tMột từ tiếng Việt có tối đa 5 phụ âm: nghiêng");
     }
 }

@@ -26,6 +26,6 @@ public class Rule19 extends Rule{
     @Override
     public String showError() {
 
-        return ("Nếu có \"ảu\" thì từ này bắt buộc phải nằm trong từ \"nhảu\"");
+        return ("Rule19:\tNếu có \"ảu\" thì từ này bắt buộc phải nằm trong từ \"nhảu\"");
     }
 }

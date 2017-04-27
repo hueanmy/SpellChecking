@@ -26,6 +26,6 @@ public class Rule13 extends Rule {
 
     @Override
     public String showError() {
-        return ("một số phụ âm được phép đứng cuối:nh, ch, ng");
+        return ("Rule13:\tmột số phụ âm được phép đứng cuối:nh, ch, ng");
     }
 }

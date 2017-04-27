@@ -32,6 +32,6 @@ public class Rule18 extends Rule {
 
     @Override
     public String showError() {
-        return ("Chỉ có một số nguyên âm được phép đứng đằng sau \"ả\" để tạo thành cặp nguyên âm: ải, ảo, ảy.");
+        return ("Rule18:\tChỉ có một số nguyên âm được phép đứng đằng sau \"ả\" để tạo thành cặp nguyên âm: ải, ảo, ảy.");
     }
 }

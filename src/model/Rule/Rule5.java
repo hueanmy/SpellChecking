@@ -4,7 +4,6 @@ package model.Rule;
  * Created by katie on 11/03/2017.
  */
 public class Rule5 extends Rule{
-    @Override
     public boolean isValid(String x) {
         String VowelCharacters = "eyuioa"
                 + "èéẹẻẽ" + "ê" + "ềếệểễ"
@@ -27,7 +26,6 @@ public class Rule5 extends Rule{
             return false;
     }
 
-    @Override
     public String showError() {
         return ("Một từ tiếng Việt tối đa là 3 nguyên âm");
     }

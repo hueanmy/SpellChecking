@@ -17,6 +17,6 @@ public class Rule2 extends Rule{
 
     @Override
     public String showError() {
-        return ("Một số chữ trên bàn phím không xuất hiện trong tiếng việt w,z,j,f");
+        return ("Rule2:\tMột số chữ trên bàn phím không xuất hiện trong tiếng việt w,z,j,f");
     }
 }

@@ -41,6 +41,6 @@ public class Rule11 extends Rule {
     }
 
     public String showError() {
-        return ("Có một số phụ âm được phép đứng cuối nhưng nó phải đi kèm với một phụ âm khác:nh, ch, ng,");
+        return ("Rule11:Có một số phụ âm được phép đứng cuối nhưng nó phải đi kèm với một phụ âm khác:nh, ch, ng,");
     }
 }

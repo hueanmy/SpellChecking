@@ -32,6 +32,6 @@ public class Rule16 extends Rule {
 
     @Override
     public String showError() {
-        return ("Chỉ có một số nguyên âm được phép đứng đằng sau \"ã\" để tạo thành cặp nguyên âm:ãi, ão, ãy");
+        return ("Rule16:\tChỉ có một số nguyên âm được phép đứng đằng sau \"ã\" để tạo thành cặp nguyên âm:ãi, ão, ãy");
     }
 }

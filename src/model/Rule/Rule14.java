@@ -25,7 +25,7 @@ public class Rule14 extends Rule {
 
     @Override
     public String showError() {
-        return ("Rule14:tất cả những nguyên âm nào có dấu thì không được đi sau a: aa, aô, aê, aư, aơ, aă, aâ, ae");
+        return ("Rule14:\ttất cả những nguyên âm nào có dấu thì không được đi sau a: aa, aô, aê, aư, aơ, aă, aâ, ae");
 
     }
 }
