@@ -1,39 +1,33 @@
 package model.Rule;
 
-import static model.Rule.Define_Character.nguyenam;
-
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author katie
+ * Created by katie on 14/03/2017.
  */
 public class Rule15 extends Rule {
-
-    public String ShowError() {
-        return("Rule 15: Đi kèm với á phải là i, u, o, y: ái, áu, áo, áy");
-    }
-
+    @Override
     public boolean isValid(String x) {
-        for (int i = 0; i < x.length() - 1; i++) {
-            if ((x.charAt(i) + "").equalsIgnoreCase("á") && nguyenam.contains(x.charAt(i + 1) + "")) {
-                if ((x.charAt(i + 1) + "").equalsIgnoreCase("i")
-                        || (x.charAt(i + 1) + "").equalsIgnoreCase("u")
-                        || (x.charAt(i + 1) + "").equalsIgnoreCase("o")
-                        || (x.charAt(i + 1) + "").equalsIgnoreCase("y")) {
-                    return true;
-                } else {
+        String vowel15 ="ea"
+            + "èéẹẻẽ" + "ê" + "ềếệểễ"
+            + "ùúụủũ" + "ư" + "ừứựửữ"
+            + "ìíịỉĩ"
+            + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
+            + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
+            + "ỳýỵỷỹ"
+            ;
+        String consonants15 = "q r s d đ g h k l v b x";
+        for(int i=0;i<x.length()-1;i++){
+            if("á".contains(x.charAt(i)+"")){
+                if(vowel15.contains(x.charAt(i+1)+""))
                     return false;
-                }
+                if(consonants15.contains(x.charAt(i+1)+""))
+                    return false;
             }
         }
-        return true;
+         return true;
     }
 
+    @Override
+    public String showError() {
+        return ("Chỉ có một số nguyên âm được phép đứng đằng sau \"á\" để tạo thành cặp nguyên âm:ái, áu, áo, áy");
+    }
 }

@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 16/03/2017.
  */
 public class Rule45C extends Rule{
+    @Override
     public boolean isValid(String x) {
         boolean check = false;
         String[] words = {"ngửi","gửi","chửi","ngửa","lửa","cửa","mửa","thửa","cửi"};
@@ -31,7 +32,8 @@ public class Rule45C extends Rule{
         return check;
     }
 
-    public String ShowError() {
-        return ("Rule45C:Nếu nguyên âm ử đi sau là nguyên âm i, a thì chỉ có các từ: ngửi,gửi,chửi,ngửa,lửa,cửa,mửa,thửa,cửi");
+    @Override
+    public String showError() {
+        return ("Nếu nguyên âm ử đi sau là nguyên âm i, a thì chỉ có các từ: ngửi,gửi,chửi,ngửa,lửa,cửa,mửa,thửa,cửi");
     }
 }

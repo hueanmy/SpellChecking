@@ -1,37 +1,36 @@
 package model.Rule;
 
-import static model.Rule.Define_Character.nguyenam;
-
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author katie
+ * Created by katie on 15/03/2017.
  */
 public class Rule28 extends Rule {
 
-    public String ShowError() {
-        return("Rule 28: Đi sau nguyên âm ỉ, ì, ị, ĩ, í phải là u hoặc a");
-    }
-
+    @Override
     public boolean isValid(String x) {
-        String list = "ỉìịĩí";
-        for (int i = 0; i < x.length() - 1; i++) {
-            if (list.contains(x.charAt(i) + "") && nguyenam.contains(x.charAt(i + 1) + "")) {
-                if ((x.charAt(i + 1) + "").equalsIgnoreCase("u")
-                        || (x.charAt(i + 1) + "").equalsIgnoreCase("a")) {
-                    return true;
-                } else {
-                    return false;
-                }
+        String nguyenam = "yio"
+            + "èéẹẻẽ"
+            + "ùúụủũ" + "ư" + "ừứựửữ"
+            + "ìíịỉĩ"
+            + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
+            + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
+            + "ỳýỵỷỹ"
+            ;
+        String phuamkhongdivs_i = "q r t p s d g h k l x c v đ b";
+        for(int i=0;i<x.length()-1;i++){
+            if("i".contains(x.charAt(i)+"")){
+               if(nguyenam.contains(x.charAt(i+1)+""))
+                   return false;
+               if(phuamkhongdivs_i.contains(x.charAt(i+1)+""))
+                   return false;
             }
         }
+
         return true;
+    }
+
+    @Override
+    public String showError() {
+
+        return ("Các nguyên âm được phép sau nguyên âm \"i\": ia, iu, iê, iế, iệ, iể, iễ, iề,");
     }
 }

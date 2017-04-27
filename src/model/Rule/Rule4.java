@@ -1,37 +1,30 @@
 package model.Rule;
 
-import static model.Rule.Define_Character.nguyenam;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
- *
- * @author katie
+ * Created by katie on 11/03/2017.
  */
 public class Rule4 extends Rule {
-
-    public String ShowError() {
-        return ("Rule 4: Từ phải có tối thiểu 1 nguyên âm");
-    }
-
-    public Rule4() {
-    }
-
+    @Override
     public boolean isValid(String x) {
-        int count = 0;
-        for (int j = 0; j < x.length(); j++) {
-            if (nguyenam.contains(x.charAt(j) + "")) {
-                count++;
-            }
-        }
-        if (count > 0) {
-            return true;
-        } else {
-            return false;
+    String VowelCharacters = "eyuioa"
+            + "èéẹẻẽ" + "ê" + "ềếệểễ"
+            + "ùúụủũ" + "ư" + "ừứựửữ"
+            + "ìíịỉĩ"
+            + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
+            + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
+            + "ỳýỵỷỹ"
+            ;
+    boolean check = false;
+    for (int i = 0 ; i<x.length();i++){
+        if(VowelCharacters.contains(x.charAt(i)+"")){
+            check = true;
         }
     }
+        return check;
+    }
 
+    @Override
+    public String showError() {
+        return ("Một từ trong tiếng Việt có tối thiểu 1 nguyên âm (tính cả có dấu) và y là nguyên âm");
+    }
 }

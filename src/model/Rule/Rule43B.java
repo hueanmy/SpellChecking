@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 16/03/2017.
  */
 public class Rule43B extends Rule {
+    @Override
     public boolean isValid(String x) {
         boolean check = false;
         String word43 = "ý e ơ á ả ạ à ỳ ở";
@@ -27,9 +28,10 @@ public class Rule43B extends Rule {
         return check;
     }
 
-    public String ShowError() {
+    @Override
+    public String showError() {
 
-        return ("Rule43B: Nguyên âm \"ý\", \"e\" và \"ơ\", \"á\", \"ả\", \"ạ\" \"à\" cũng đi sau \"u\" được " +
+        return ("Nguyên âm \"ý\", \"e\" và \"ơ\", \"á\", \"ả\", \"ạ\" \"à\" cũng đi sau \"u\" được " +
                 "nhưng đó phải là các từ \"quý\" \"que\", quơ, \"huơ\", \"quá\" quả, quạ, quà");
     }
 }

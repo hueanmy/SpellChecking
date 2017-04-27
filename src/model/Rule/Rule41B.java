@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 16/03/2017.
  */
 public class Rule41B extends Rule{
+    @Override
     public boolean isValid(String x) {
         boolean check = false;
         for(int i=0;i<x.length()-1;i++){
@@ -21,8 +22,9 @@ public class Rule41B extends Rule{
         return false;
     }
 
-    public String ShowError() {
+    @Override
+    public String showError() {
 
-        return ("Rule41B: Nguyên âm \"ỡ\" nếu đi sau nó là \"i\" thì từ đó phải là \"hỡi\"");
+        return ("Nguyên âm \"ỡ\" nếu đi sau nó là \"i\" thì từ đó phải là \"hỡi\"");
     }
 }

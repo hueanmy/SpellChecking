@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 17/03/2017.
  */
 public class Rule29B extends Rule {
+    @Override
     public boolean isValid(String x) {
         boolean check = false;
         String[] words ={"gió","giống","giỗ","giọng","giỏ","giò","giá","giấc","giặc"};
@@ -27,7 +28,8 @@ public class Rule29B extends Rule {
         return check;
     }
 
-    public String ShowError() {
+    @Override
+    public String showError() {
 
         return ("Nguyên âm i được phép đi cùng \"ó\", \"ố\", \"ỗ\", \"ọ\", \"ỏ\", \"ò\", \"á\", \"ấ\", \"ặ\" :" +
                 "\"gió\" , \"giống\", \"giỗ\", \"giọng\", \"giỏ\", \"giò\", \"giá\", \"giấc\", \"giặc\"");

@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 15/03/2017.
  */
 public class Rule26_27 extends Rule {
+    @Override
     public boolean isValid(String x) {
         String nguyenam = "eyuioa"
             + "èéẹẻẽ" + "ê" + "ềếệểễ"
@@ -24,7 +25,8 @@ public class Rule26_27 extends Rule {
         return true;
     }
 
-    public String ShowError() {
+    @Override
+    public String showError() {
 
         return ("Cũng tương tự như thế, không có nguyên âm nào đằng sau \"ằ\", \"ắ\", \"ẵ\", \"ẳ\", \"ặ\"");
     }

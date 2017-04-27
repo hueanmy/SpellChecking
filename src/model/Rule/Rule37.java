@@ -1,34 +1,38 @@
 package model.Rule;
 
-import static model.Rule.Define_Character.nguyenam;
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Luc Hoang
+ * Created by katie on 16/03/2017.
  */
-public class Rule37 extends Rule{
-    public String ShowError() {
-        return("Rule 37: Đi sau nguyên âm ô ố ồ ổ ộ ỗ phải là i");
-    }
-
+public class Rule37 extends Rule {
+    @Override
     public boolean isValid(String x) {
-        String list = "ôốồổộỗ";
+        boolean check = false;
+        String[] words = {"tễu", "phễu", "nghễu", "ễu"};
         for (int i = 0; i < x.length() - 1; i++) {
-            if (list.contains(x.charAt(i) + "") && nguyenam.contains(x.charAt(i + 1) + "")) {
-                if ((x.charAt(i + 1) + "").equalsIgnoreCase("i")) {
-                    return true;
-                } else {
-                    return false;
-                }
+            if ("ễ".contains(x.charAt(i) + "")) {
+                if ("u".contains(x.charAt(i + 1) + ""))
+                    check = true;
+                break;
             }
         }
-        return true;
+        if (check == true) {
+            for (String c : words) {
+                if (x.equals(c)){
+                    check = true;
+                    break;
+                }
+                else {check = false;}
+            }
+        }
+        return check;
+    }
+
+
+
+
+    @Override
+    public String showError () {
+
+        return ("Nguyên âm \"ễu\" chỉ được phép đi trong từ \"Tễu\" và \"phễu\"");
     }
 }

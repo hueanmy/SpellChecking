@@ -1,36 +1,37 @@
 package model.Rule;
 
-import static model.Rule.Define_Character.nguyenam;
-
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author katie
+ * Created by katie on 15/03/2017.
  */
 public class Rule20 extends Rule {
+    @Override
+    public boolean isValid(String x) {
+         String vowel20 ="eaio"
+            + "èéẹẻẽ" + "ê" + "ềếệểễ"
+            + "ùúụủũ" + "ư" + "ừứựửữ"
+            + "ìíịỉĩ"
+            + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
+            + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
+            + "ỳýỵỷỹ"
+            ;
+        String consonants20 = "q r s d g h k l v b x t p c đ";
+        for(int i=0;i<x.length()-1;i++){
+            if("â".contains(x.charAt(i)+"")){
+                if(vowel20.contains(x.charAt(i+1)+""))
+                    return false;
+            }
+            if("â".contains(x.charAt(i)+"")){
+                if(consonants20.contains(x.charAt(i+1)+""))
+                    return false;
+            }
 
-    public String ShowError() {
-        return("Rule 20: Đi kèm với â phải là u, y: âu, ây");
+        }
+        return true ;
     }
 
-    public boolean isValid(String x) {
-        for (int i = 0; i < x.length() - 1; i++) {
-            if ((x.charAt(i) + "").equalsIgnoreCase("â") && nguyenam.contains(x.charAt(i + 1) + "")) {
-                if ((x.charAt(i + 1) + "").equalsIgnoreCase("u")
-                        || (x.charAt(i + 1) + "").equalsIgnoreCase("y")) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        }
-        return true;
+    @Override
+    public String showError() {
+
+        return ("Chỉ có một số nguyên âm được phép đứng đằng sau \"â\" để tạo thành cặp nguyên âm: âu, ây");
     }
 }

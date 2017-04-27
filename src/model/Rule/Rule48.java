@@ -5,20 +5,15 @@
  */
 package model.Rule;
 
-/**
- *
- * @author katie
- */
+
 public class Rule48 extends Rule {
 
     String list = "eéèẽẹẻuúùũụủoóòõọỏưứừữựửôốồỗộổơớờỡợở";
     boolean ch = false;
     boolean nh = false;
 
-    public String ShowError() {
-        return "Rule 48: Trước CH và NH không được có âm u, o, e, y";
-    }
 
+    @Override
     public boolean isValid(String x) {
         if (x.length() > 3) {
             if ((x.charAt(x.length() - 1) + "").equalsIgnoreCase("h")
@@ -30,5 +25,12 @@ public class Rule48 extends Rule {
         }
         return true;
     }
+
+	@Override
+	public String showError() {
+
+        return ("Các nguyên âm ba có thể xuất hiện được trong tiếng Việt mà nguyên âm đầu tiên là \"ư\" gồm: " +
+                "ươi, ười, ưới, ưỡi, ưởi, ượi, ượu, ườu, ươu, ướu,");
+	}
 
 }

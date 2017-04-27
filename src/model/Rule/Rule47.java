@@ -5,18 +5,15 @@
  */
 package model.Rule;
 
-import static model.Rule.Define_Character.nguyenam;
 
 /**
  *
- * @author katie
+ * @author Luc Hoang
  */
 public class Rule47 extends Rule {
 
-    public String ShowError() {
-        return "Rule 47: Trước phụ âm CH không được là nguyên âm không dấu có dấu huyền hoặc ngã";
-    }
 
+    @Override
     public boolean isValid(String x) {
         String list_huyen_nga = "eèẽêềễuùũưừữiìĩoòõôồỗơờỡaàãầẫằẵ";
         if (x.length() > 3) {
@@ -28,5 +25,13 @@ public class Rule47 extends Rule {
         }
         return true;
     }
+
+	@Override
+	public String showError() {
+		return ("Các nguyên âm ba có thể xuất hiện được trong tiếng Việt mà " +
+                "nguyên âm đầu tiên là \"u\" gồm: uôi, uối, uồi, uỗi, uội, uổi, uai " +
+                "(phải đi với q), quái, quại, quay, quẩy, quậy, quầy, " +
+                "uây (đi được với q và kh), uấy (đi kèm với q và kh), quẫy, uya, uỷu (đi với kh)");
+	}
 
 }

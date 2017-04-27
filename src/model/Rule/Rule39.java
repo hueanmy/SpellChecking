@@ -1,36 +1,24 @@
 package model.Rule;
 
-import static model.Rule.Define_Character.nguyenam;
-
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author katie
+ * Created by katie on 16/03/2017.
  */
-public class Rule39 extends Rule{
-    public String ShowError() {
-        return("Rule 39: Đi sau nguyên âm ú ù ủ ụ là i a y");
-    }
-
+public class Rule39 extends Rule {
+    @Override
     public boolean isValid(String x) {
-        String list ="úùủụ";
-        String list2 = "iay";
-        for (int i = 0; i < x.length() - 1; i++) {
-            if (list.contains(x.charAt(i)+"") && nguyenam.contains(x.charAt(i + 1) + "")) {
-                if (list2.contains(x.charAt(i+1)+"")) {
-                    return true;
-                }  else {
+        String tusau_o = "a i e n m";
+        for(int i=0;i<x.length()-1;i++){
+            if("o".contains(x.charAt(i)+"")){
+                if(!tusau_o.contains(x.charAt(i+1)+""))
                     return false;
-                }
             }
         }
         return true;
+    }
+
+    @Override
+    public String showError() {
+
+        return ("Nguyên âm sau \"o\" để tạo thành cặp nguyên âm: \"oa\", \"oi\", \"oe\",");
     }
 }

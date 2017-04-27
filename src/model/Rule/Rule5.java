@@ -1,34 +1,34 @@
 package model.Rule;
 
-import static model.Rule.Define_Character.nguyenam;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
- *
- * @author katie
+ * Created by katie on 11/03/2017.
  */
-public class Rule5 extends Rule {
-
-    public String ShowError() {
-        return("Rule 5: Không được có nhiều quá 3 nguyên âm");
-    }
-
+public class Rule5 extends Rule{
+    @Override
     public boolean isValid(String x) {
+        String VowelCharacters = "eyuioa"
+                + "èéẹẻẽ" + "ê" + "ềếệểễ"
+                + "ùúụủũ" + "ư" + "ừứựửữ"
+                + "ìíịỉĩ"
+                + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
+                + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
+                + "ỳýỵỷỹ"
+                ;
         int count = 0;
-        for (int j = 0; j < x.length(); j++) {
-            if (nguyenam.contains(x.charAt(j) + "")) {
-                count++;
+        for(int i = 0; i<x.length();i++){
+            if(VowelCharacters.contains(x.charAt(i) +"")){
+               count++;
             }
         }
-        if (count <= 3) {
+        if(count>=1&&count<=3){
             return true;
-        } else {
-            return false;
         }
+        else
+            return false;
     }
 
+    @Override
+    public String showError() {
+        return ("Một từ tiếng Việt tối đa là 3 nguyên âm");
+    }
 }

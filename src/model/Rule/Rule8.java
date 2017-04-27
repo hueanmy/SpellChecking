@@ -1,32 +1,40 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.Rule;
 
 /**
- *
- * @author katie
+ * Created by katie on 11/03/2017.
  */
 public class Rule8 extends Rule {
-
-    public String ShowError() {
-        return "Rule 8: Nguyên âm trước t hoặc p phải là nguyên âm có dấu nặng hoặc sắc";
-    }
-
+    @Override
     public boolean isValid(String x) {
-        String list = "éẹếệúụứựíịóọốộớợáạấậắặỵý";
-        for (int i = 1; i < x.length(); i++) {
-            if ((x.charAt(i) + "").equalsIgnoreCase("t") || (x.charAt(i) + "").equalsIgnoreCase("p") && x.length() > 1) {
-                if (list.contains(x.charAt(i - 1) + "")) {
-                    return true;
-                } else {
-                    return false;
-                }
+        String character = "c";
+        String constants  = "qrtypsdgklxcvbnmđh";
+        String nguyeam = "eyuioa"
+            + "èéẹẻẽ" + "ê" + "ềếệểễ"
+            + "ùúụủũ" + "ư" + "ừứựửữ"
+            + "ìíịỉĩ"
+            + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
+            + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
+            + "ỳýỵỷỹ"
+            ;
+        boolean check = false;
+        if("c".contains(x.charAt(0)+"")) {
+            if (constants.contains(x.charAt(1) + "")) {
+                check = true;
+            }
+            else {
+                return true;
             }
         }
-        return true;
+        if(check = true){
+            if(!"h".contains(x.charAt(1)+"")) {
+                check = false;
+            }
+        }
+        return check;
     }
 
+    @Override
+    public String showError() {
+        return ("Nếu một từ có phụ âm c đứng đầu thì phụ âm sau nó (nếu có) phải là H");
+    }
 }

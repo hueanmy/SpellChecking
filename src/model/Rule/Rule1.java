@@ -1,30 +1,23 @@
 package model.Rule;
 
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author katie
+ * Created by katie on 05/03/2017.
  */
-public class Rule1 extends Rule{
-     public String ShowError(){
-
-            return "Rule 1: Có mốt số phụ âm chỉ được phép đứng đầu từ: q,s,d,đ,k,l,x,v,b";
-        }
-        public boolean isValid(String x){
-            String firstConsonants = "q s d đ k l x v b";
-            for(int j = 1;j<x.length();j++){
-                if(firstConsonants.contains(x.charAt(j)+"")){
-                    return false;
-                }
+public class Rule1 extends Rule {
+    @Override
+    public boolean isValid(String x) {
+        String firstConstants = "q s d đ k l x v b";
+        for (int i = 1; i < x.length(); i++) {
+            if (firstConstants.contains(x.charAt(i) + "")) {
+                return false;
             }
-            return true;
+
         }
+        return true;
     }
 
+    @Override
+    public String showError() {
+        return ("Có một số phụ âm chỉ được phép đứng đầu từ: q, s, d, đ, k, l, x, v, b");
+    }
+}

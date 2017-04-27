@@ -5,18 +5,11 @@
  */
 package model.Rule;
 
-/**
- *
- * @author katie
- */
 public class Rule49 extends Rule {
 
     String list_khong_dau = "aăâeêyuưioôơ";
 
-    public String ShowError() {
-        return "Rule 49: Trước c phải là nguyên âm có dấu";
-    }
-
+    @Override
     public boolean isValid(String x) {
         if (x.length() > 1) {
             for (int i = 1; i < x.length(); i++) {
@@ -29,4 +22,12 @@ public class Rule49 extends Rule {
         }
         return true;
     }
+
+	@Override
+	public String showError() {
+
+        return ("Các nguyên âm ba có thể xuất hiện được trong tiếng Việt mà " +
+                "nguyên âm đầu tiên là \"o\" gồm: oai, oài, oái, oải, oại  " +
+                "(oãi thì gần như không thấy), oay (chỉ đi với x), oáy (đi với x và ng), oẹo (đi với ng), ");
+	}
 }

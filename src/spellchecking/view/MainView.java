@@ -176,8 +176,8 @@ public class MainView extends javax.swing.JFrame {
 
 		check.listRules = new ArrayList<>();
 
-//		check.listRules.add(new Rule1());
-//		check.listRules.add(new Rule2());
+		check.listRules.add(new Rule1());
+		check.listRules.add(new Rule2());
 //		check.listRules.add(new Rule3());
 //		check.listRules.add(new Rule4());
 //		check.listRules.add(new Rule5());
@@ -203,7 +203,7 @@ public class MainView extends javax.swing.JFrame {
 //		check.listRules.add(new Rule25());
 //		check.listRules.add(new Rule26_27());
 //		check.listRules.add(new Rule28());
-//		check.listRules.add(new Rule29());
+		check.listRules.add(new Rule29());
 //		check.listRules.add(new Rule29B());
 		check.listRules.add(new Rule30_31_33());
 //		check.listRules.add(new Rule32_34());
@@ -232,12 +232,9 @@ public class MainView extends javax.swing.JFrame {
 		for (String word : arr) {
 			for (Rule rule : check.listRules) {
 				if (!rule.isValid(word)) {
-					contentError = word + ": " + "Sai luat: \t" + rule.ShowError(); 
+					contentError += word + ": " + "Sai luat: \t" + rule.showError() + "\n"; 
 					System.out.println(contentError);
-					textError.setText(word + ": " + "Sai luat: " + rule.ShowError());
-					
-
-//					textError.setText("Tu sai la:" + word + "Sai luat:\t" + rule.ShowError());
+					textError.setText(contentError );
 				}
 			}
 

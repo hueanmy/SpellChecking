@@ -16,10 +16,12 @@ import static model.Rule.Define_Character.VietnameseCharacters;
  */
 public class Rule3 extends Rule {
 
-    public String ShowError() {
+    @Override
+    public String showError() {
         return("Rule 3: Không thể xuất hiện từ này trong tiếng Việt");
     }
 
+    @Override
     public boolean isValid(String x) {
         for (int j = 0; j < x.length(); j++) {
             if (!VietnameseCharacters.contains(x.charAt(j) + "")&&!VietnameseCharacters.toUpperCase().contains(x.charAt(j) + "")) {

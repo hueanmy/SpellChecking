@@ -1,38 +1,56 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.Rule;
-
+/* con error*/
 /**
- *
- * @author katie
+ * Created by katie on 16/03/2017.
  */
-public class Rule46 extends Rule {
-
-    public String ShowError() {
-        return "Rule 46: Sau ngh và gh phải là i hoặc e";
-    }
-
+public class Rule46 extends Rule{
+    @Override
     public boolean isValid(String x) {
-        String to_hop_e = "eéèẻẹẽêệễểềế";
-        String to_hop_i = "iíìỉịĩ";
-        for(int i = 0;i<x.length();i++){
-            if(x.length()>3&&(x.charAt(0)+"").equalsIgnoreCase("n")&&(x.charAt(1)+"").equalsIgnoreCase("g")&&(x.charAt(2)+"").equalsIgnoreCase("h")){
-                if(to_hop_i.contains(x.charAt(3)+"")||to_hop_e.contains(x.charAt(3)+"")){
-                    return true;
-                } else return false;
-            } else if(x.length()>2&&(x.charAt(0)+"").equalsIgnoreCase("g")&&(x.charAt(1)+"").equalsIgnoreCase("h")){
-                if(to_hop_i.contains(x.charAt(2)+"")||to_hop_e.contains(x.charAt(2)+"")){
-                    return true;
-                } else return false;
+        String[] words = {"iữa", "iễu", "iếu", "iều", "iểu", "iêu", "iệu",
+                          "iai", "iải", "iới", "iỏi", "iươ", "iườ", "iòi"};
+        String word2 = "ữ ễ ế ề ể ê ệ a ả ớ ỏ ư ò";
+        String word3 = "a u i ơ ờ ";
+        boolean check = false;
+        int count = 0;
+        String VowelCharacters = "eyuioa"
+            + "èéẹẻẽ" + "ê" + "ềếệểễ"
+            + "ùúụủũ" + "ư" + "ừứựửữ"
+            + "ìíịỉĩ"
+            + "òóọỏõ" + "ô" + "ồốộổỗ" + "ơ" + "ờớợởỡ"
+            + "àáạảã" + "â" + "ầấậẩẫ" + "ă" + "ằắặẳẵ"
+            + "ỳýỵỷỹ"
+            ;
+        for(int i=0;i<x.length();i++){
+            if(VowelCharacters.contains(x.charAt(i)+"")){
+                count++;
             }
         }
-        return true;
+        System.out.println("count" + count);
+        if(count==3){
+            for(int i=0;i<x.length()-1;i++){
+                if("i".contains(x.charAt(i)+"")){
+                            check = true;
+                            break;
+                }
+            }
+        }
+        if(check==true){
+            for(String c : words){
+               if(x.contains(c)){
+                    check = true;
+                    break;
+                }
+                else
+                    check = false;
+            }
+        }
+
+        return check;
     }
-    
+
+    @Override
+    public String showError() {
+        return ("Các nguyên âm ba có thể xuất hiện được trong tiếng Việt mà nguyên âm đầu tiên là \"i\" " +
+                "là: iữa, iễu, iếu, iều, iểu, iêu, iệu, iai, iải, iới, iỏi, iươ, iườ, iòi,");
+    }
 }
-
-
-

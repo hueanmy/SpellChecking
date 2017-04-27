@@ -1,30 +1,22 @@
 package model.Rule;
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author katie
+ * Created by katie on 11/03/2017.
  */
-public class Rule2 extends Rule {
-
-    public String ShowError() {
-        return ("Rule 2: Không thể xuât hiện từ này trong Tiếng Việt");
-    }
-
+public class Rule2 extends Rule{
+    @Override
     public boolean isValid(String x) {
-        String firstConsonants = "w z j f";
-        for (int j = 0; j < x.length(); j++) {
-            if (firstConsonants.contains(x.charAt(j) + "")) {
+        String constants = "w z j f";
+        for (int i = 0; i<x.length();i++){
+            if(constants.contains(x.charAt(i) + "")){
                 return false;
             }
         }
         return true;
     }
 
+    @Override
+    public String showError() {
+        return ("Một số chữ trên bàn phím không xuất hiện trong tiếng việt w,z,j,f");
+    }
 }

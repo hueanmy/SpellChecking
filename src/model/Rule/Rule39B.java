@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 16/03/2017.
  */
 public class Rule39B extends Rule {
+    @Override
     public boolean isValid(String x) {
         boolean check = false;
         String[] words = {"boong","xoong"};
@@ -25,8 +26,9 @@ public class Rule39B extends Rule {
         return check;
     }
 
-    public String ShowError() {
+    @Override
+    public String showError() {
 
-        return ("Rule39B:Cặp nguyên âm \"oo\" chỉ có thể thuộc về xoong, boong,");
+        return ("Cặp nguyên âm \"oo\" chỉ có thể thuộc về xoong, boong,");
     }
 }

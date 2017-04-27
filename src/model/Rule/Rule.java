@@ -5,5 +5,5 @@ package model.Rule;
  */
 public abstract class Rule {
     public abstract boolean isValid(String x);
-    public abstract String ShowError();
+    public abstract String showError();
 }

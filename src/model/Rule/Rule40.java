@@ -1,32 +1,30 @@
 package model.Rule;
 
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author katie
+ * Created by katie on 16/03/2017.
  */
-public class Rule40 extends Rule{
-    public String ShowError() {
-        return("Rule 40: Cặp nguyên âm ũa chỉ tồn tại trong đũa, dũa");
-    }
-
+public class Rule40 extends Rule {
+    @Override
     public boolean isValid(String x) {
+        String aftervowels_40 = "e i a n m";
+        String aftervowels_40_1 = "e i a n m t c p";
         for (int i = 0; i < x.length() - 1; i++) {
-            if ((x.charAt(i) + "").equalsIgnoreCase("ũ") && (x.charAt(i+1) + "").equalsIgnoreCase("a")) {
-                if (i>0 &&(x.charAt(i-1) + "").equalsIgnoreCase("đ")||i>0&&(x.charAt(i-1) + "").equalsIgnoreCase("d")) {
-                    return true;
-                }  else {
+            if ("ò ỏ".contains(x.charAt(i) + "")) {
+                if (!aftervowels_40.contains(x.charAt(i + 1) + ""))
                     return false;
-                }
+            }
+            if("ó ọ".contains(x.charAt(i)+"")){
+                if(!aftervowels_40_1.contains(x.charAt(i+1)+""))
+                    return false;
             }
         }
-        return true;
+            return true;
+        }
+
+        @Override
+        public String showError () {
+            return ("Ta có thể tổng quát hóa lên rằng các từ \"ó\", \"ò\", \"ỏ\", \"ọ\" " +
+                    "có các nguyên âm \"e\", \"i\", \"a\" đằng sau được");
+        }
     }
-}
+

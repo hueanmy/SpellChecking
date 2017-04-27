@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 16/03/2017.
  */
 public class Rule45A extends Rule {
+    @Override
     public boolean isValid(String x) {
         boolean check = false;
         String[] words ={ "dũa","đũa"};
@@ -28,7 +29,8 @@ public class Rule45A extends Rule {
         return check;
     }
 
-    public String ShowError() {
-        return ("Rule45A: Nguyên âm \"ũ\" đi sau là y được. Nhưng đi sau là \"a\" với các trường hợp \"đũa\", \"dũa\"");
+    @Override
+    public String showError() {
+        return ("Nguyên âm \"ũ\" đi sau là y được. Nhưng đi sau là \"a\" với các trường hợp \"đũa\", \"dũa\"");
     }
 }

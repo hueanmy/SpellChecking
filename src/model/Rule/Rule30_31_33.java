@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 15/03/2017.
  */
 public class Rule30_31_33 extends Rule {
+    @Override
     public boolean isValid(String x) {
         String nguyenam = "eyio"
             + "èéẹẻẽ"+"ê"+"ềếệễể"
@@ -26,9 +27,10 @@ public class Rule30_31_33 extends Rule {
         return true;
     }
 
-    public String ShowError() {
+    @Override
+    public String showError() {
 
-        return ("Rule30-31-33:Các nguyên âm được phép sau nguyên âm \"ì\": ìu, ìa, " +
+        return ("Các nguyên âm được phép sau nguyên âm \"ì\": ìu, ìa, " +
                 "Các nguyên âm được phép sau nguyên âm \"ỉ\": ỉu, mỉa," +
                 "Các nguyên âm được phép sau nguyên âm \"ĩ\": ĩu, ĩa,");
     }

@@ -4,6 +4,7 @@ package model.Rule;
  * Created by katie on 15/03/2017.
  */
 public class Rule19B extends Rule {
+    @Override
     public boolean isValid(String x) {
           String vowel19B ="ea"
             + "èéẹẻẽ" + "ê" + "ềếệểễ"
@@ -28,8 +29,9 @@ public class Rule19B extends Rule {
         return true;
     }
 
-    public String ShowError() {
+    @Override
+    public String showError() {
 
-        return ("Rule19B: Chỉ có một số nguyên âm được phép đứng đằng sau \"à\" để tạo thành cặp nguyên âm: ài, àu, ào, ày");
+        return ("Chỉ có một số nguyên âm được phép đứng đằng sau \"à\" để tạo thành cặp nguyên âm: ài, àu, ào, ày");
     }
 }
